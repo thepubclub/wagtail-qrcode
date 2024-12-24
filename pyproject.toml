@@ -30,7 +30,7 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies =[
-    "Wagtail>=4.1",
+    "Wagtail>=5.2",
     "PyQRCode>=1,<2"
 ]
 
