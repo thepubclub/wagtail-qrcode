@@ -1,25 +1,5 @@
 {% load wagtailadmin_tags i18n %}
-{% comment "text/markdown" %}
-
-    The field template is very flexible to cater for a wide range of use cases. It has three main attributes that support different use cases:
-
-    1. `field` when using the template as an `include` anywhere in the CMS.
-    2. `rendered_field` and `show_label=False` are only used inside forms with edit handlers / panels (`FieldPanel`).
-    3. `children` allows fully custom rendering of the Django widget, or usage with arbitrary HTML, as a `{% field %}<select>[…]</select>{% endfield %}` template tag.
-
-    A unified template for all three use cases is messy, but it guarantees we are keeping form field styles the same everywhere.
-
-
-    - `classname` - For legacy patterns requiring field-specific classes. Avoid if possible.
-    - `show_label` - Hide the label if it is rendered outside of the field.
-    - `id_for_label` - Manually set this this if the field’s HTML isn’t rendered by Django (for example hard-coded in HTML).
-    - `sr_only_label` - Make the label invisible for all but screen reader users. Use this if the field is displayed without a label.
-    - `icon` - Some fields have an icon, though this is generally a legacy pattern.
-    - `help_text` - Manually set this if the field’s HTML is hard-coded.
-    - `help_text_id` - The help text’s id, necessary so it can be attached to the field with `aria-describedby`.
-    - `show_add_comment_button` - Display a comment control within Wagtail forms.
-
-{% endcomment %}
+{% comment "text/markdown" %}Copied from wagtail/admin/templates/wagtailadmin/shared/formatted_field.html{% endcomment %}
 
 {% firstof id_for_label field.id_for_label as label_for %}
 {% fragment as label_id %}{{ label_for }}-label{% endfragment %}
