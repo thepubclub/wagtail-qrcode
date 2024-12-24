@@ -28,46 +28,25 @@ classifiers = [
   "Framework :: Wagtail :: 5",
   "Framework :: Wagtail :: 6",
 ]
+
 requires-python = ">=3.9"
+
 dependencies =[
     "Wagtail>=4.1",
     "PyQRCode>=1,<2"
 ]
 
-[project.optional-dependencies]
-development = [
-    "black==24.4.2",
-    "flake8==7.1.0",
-    "isort==5.13.0",
+[dependency-groups]
+dev = [
+    "coverage>=7.6.9",
+    "ruff>=0.8.4",
 ]
-testing = [
-  "coverage"
-]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project.urls]
 Repository = "https://github.com/wagtail-packages/wagtail-qrcode"
 Issues = "https://github.com/wagtail-packages/wagtail-qrcode/issues"
 Changelog = "https://github.com/wagtail-packages/wagtail-qrcode/blob/release/CHANGELOG.md"
-
-
-[tool.black]
-line-length = 88
-target-version = ['py39']
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-
-[tool.isort]
-profile = "black"

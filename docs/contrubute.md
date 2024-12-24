@@ -11,20 +11,20 @@ git clone https://github.com/nickmoreton/wagtail-qrcode
 ## Setup a virtual environment
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-## Install the package into your virtual environment
-
-```bash
-pip install -e ".[development,testing]"
+uv sync
+source .venv/bin/activate
 ```
 
 ## Setup the testing app
 
 ```bash
-make migrate && make admin && make run
+make migrate && make admin
+```
+
+## Run the development server
+
+```bash
+make run
 ```
 
 The app can be viewed at <http://localhost:8000>
